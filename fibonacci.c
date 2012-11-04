@@ -1,6 +1,12 @@
+/*
+This code just serves as an example of different approaches to solve a common
+problem.
+*/
 #include <stdio.h>
-
-#define MAX_FIBONACCI 1000
+/*
+ MAX_FIBONACCI After this number there is an overflow of the unsigned long int
+*/
+#define MAX_FIBONACCI 92
 
 unsigned long int loopFibonacci( int number);
 unsigned long int recursiveFibonacci( int number);
@@ -51,6 +57,9 @@ unsigned long int loopFibonacci( int number)
   return result;
 }
 
+/*
+* One of the best examples of how not to use a recursion function
+*/
 unsigned long int recursiveFibonacci( int number)
 {
   if(number <= 1)
@@ -62,7 +71,9 @@ unsigned long int recursiveFibonacci( int number)
       return  recursiveFibonacci( number -1 ) + recursiveFibonacci( number-2);
     }
 }
-
+/* 
+* a little better implementation of a recursive function using an array
+*/
 unsigned long int recursiveArrayFibonacci(int number)
 {
   if( number <= 1)
